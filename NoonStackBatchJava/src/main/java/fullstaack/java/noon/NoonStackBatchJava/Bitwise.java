@@ -3,6 +3,8 @@ package fullstaack.java.noon.NoonStackBatchJava;
 // Bit wise operator:& | ^ >> <<
 /*
  * 1024 512 256 128 64 32 16 8 4 2 1
+ * 0    0   0   0   1  0  1  1 0 1 1 >> 91
+ * 0    0   0   0   0  0  1  0 1 1 0 >> 22
  * 0    0   0   0   0  1  0  1 1 0 1 >> aravind>>45
  * 0    0   0   0   0  1  1  1 1 0 0 >> riyaz>>60
  * 0    0   0   0   0  0  1  0 0 0 1 >> 17>> aravind^riyaz=riyaz
