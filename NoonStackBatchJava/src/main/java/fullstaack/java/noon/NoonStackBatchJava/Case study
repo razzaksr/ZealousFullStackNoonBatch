@@ -1,0 +1,13 @@
+1. print the following series 
+1,3,5,7,9,11,13,... till given END point
+
+2. Riyaz running laptop shop who wants to sale his 30 HP Laptop in 4 days
+help him to sale his stocks by writing program and wants to print how many laptop finally in the stock
+sample input:
+10
+2
+3
+5
+
+Sample Output:
+10 stocks left 
