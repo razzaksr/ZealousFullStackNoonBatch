@@ -46,7 +46,7 @@ public class Patterns
 {
 	public static void main(String[] args) 
 	{
-		Scanner scan=new Scanner(System.in);
+		/*Scanner scan=new Scanner(System.in);
 		System.out.println("Tell us no of rows you want: ");
 		int user=scan.nextInt();
 		System.out.println("Pattern pyramid lower");
@@ -61,7 +61,7 @@ public class Patterns
 				System.out.print((char)alpha);
 			}
 			limit-=2;System.out.println();
-		}
+		}*/
 		/*System.out.println("Pattern pyramid upper");
 		for(int row=1, alpha=65,limit=1;row<=user;row++)
 		{
