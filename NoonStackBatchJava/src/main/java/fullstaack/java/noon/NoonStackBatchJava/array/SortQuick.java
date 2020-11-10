@@ -31,7 +31,7 @@ public class SortQuick
 		int initial=beg-1;
 		for(int cur=beg;cur<last;cur++)
 		{
-			if(yet[cur]>pivotal)
+			if(yet[cur]<pivotal)
 			{
 				initial++;
 				int temp=yet[initial];

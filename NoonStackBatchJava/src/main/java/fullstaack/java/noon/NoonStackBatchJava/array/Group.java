@@ -8,6 +8,7 @@ public class Group
 	{
 		int[] exp= {1200,7800,4000,500};
 		System.out.println(exp.length);
+		//list
 		for(int pos=0;pos<exp.length;pos++)
 		{
 			System.out.println(exp[pos]);
@@ -16,6 +17,7 @@ public class Group
 		Scanner scan=new Scanner(System.in);
 		
 		String[] who=new String[3];
+		//update/insert
 		for(int index=0;index<10;index++)
 		{
 			who[index]=scan.nextLine();
