@@ -3,7 +3,7 @@ package fullstaack.java.noon.NoonStackBatchJava.handle;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Multiples 
+public class Nested 
 {
 	public static void main(String[] args) 
 	{
@@ -23,9 +23,21 @@ public class Multiples
 			System.out.println(ins+"\nEnter only numeric format");
 			System.out.println("Tell us Fuel Filled: ");
 			fuel=scans.nextInt();
-			System.out.println("Tell us kms travelled: ");
-			kms=scans.nextInt();
-			System.out.printf("Milage: %.3f",(double)fuel/kms);
+			try
+			{
+				System.out.println("Tell us kms travelled: ");
+				kms=scans.nextInt();
+				System.out.printf("Milage: %.3f",(double)(fuel/kms));
+			}
+			catch(ArithmeticException a)
+			{
+				System.out.println(a+"\nKMS shouldn't be 0");
+				System.out.println("Tell us Fuel Filled: ");
+				fuel=scans.nextInt();
+				System.out.println("Enter kms driven: ");
+				kms=scans.nextInt();
+				System.out.printf("Milage: %.3f",(double)fuel/kms);
+			}
 		}
 		catch(ArithmeticException a)
 		{
