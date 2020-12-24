@@ -1,6 +1,8 @@
 package fullstaack.java.noon.NoonStackBatchJava.oop;
 
-public class Mobile
+import java.io.Serializable;
+
+public class Mobile implements Serializable
 {
 	private String model,brand,features;
 	private int ram,internal,price,qty;
