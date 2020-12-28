@@ -1,14 +1,30 @@
 package fullstaack.java.noon.NoonStackBatchJava.oop;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.time.LocalDate;
+
+import org.apache.commons.io.FileUtils;
+
 //command Line interface application
 
 public class Poorvika implements Retail
 {
 	Mobile[] stock=new Mobile[15];// 0 14>> null
+	File pros=new File("D:\\jpgms\\stocks.doc");
+	File log=new File("D:\\jpgms\\log"+LocalDate.now()+".doc");
+	FileOutputStream fos;
+	ObjectOutputStream oos;
 	
-	public static void main(String[] args) 
+	
+	public static void main(String[] args) throws IOException 
 	{
 		Poorvika p=new Poorvika();
+		p.fos=new FileOutputStream(p.pros);
+		p.oos =new ObjectOutputStream(p.fos);
 		Mobile mob1=new Mobile("6.1Plus", "Nokia", "FullHd,Snapdragon620G", 4, 64, 15600, 20, 5.5F);
 		Mobile mob2=new Mobile("V20", "Vivo", "Hd,Snapdragon580G", 4, 128, 24600, 200, 5.5F);
 		Mobile mob3=new Mobile("9Lite", "Nokia", "20MBCamera,HD", 3, 32, 9600, 10, 5.5F);
@@ -30,7 +46,14 @@ public class Poorvika implements Retail
 			if(stock[index]==null)
 			{
 				stock[index]=obj;
-				System.out.println(obj.getModel()+" added to stock");
+				//System.out.println(obj.getModel()+" added to stock");
+				try {
+					oos.writeObject(obj);
+					FileUtils.writeStringToFile(log, "\n"+obj.getModel()+" added to stock\n",true);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
 			}
 		}
@@ -100,6 +123,12 @@ public class Poorvika implements Retail
 				old-=(old*0.05);
 				stock[index].setPrice(old);
 				System.out.println(stock[index].getModel()+" applied discount");
+				try {
+					FileUtils.writeStringToFile(log, "\n"+stock[index].getModel()+" applied discount",true);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		}
 	}
@@ -112,7 +141,13 @@ public class Poorvika implements Retail
 		{
 			temp=stock[pos];
 			stock[pos]=null;
-			System.out.println("Mobile removed");
+			//System.out.println("Mobile removed");
+			try {
+				FileUtils.writeStringToFile(log, "\n"+stock[pos].getModel()+" removed successfully",true);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return temp;
 	}
