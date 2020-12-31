@@ -49,7 +49,6 @@ public class Listings
 		src2.removeAll(src1);
 		System.out.println(src2);
 		src1.remove(0);
-		Collections.sort(src2);
-		System.out.println("After sorting "+src2);
+		System.out.println(src2);
 	}
 }
