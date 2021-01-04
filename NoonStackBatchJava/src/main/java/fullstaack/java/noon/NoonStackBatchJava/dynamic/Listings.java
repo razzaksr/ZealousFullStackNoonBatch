@@ -5,8 +5,8 @@ import java.util.Collections;
 import java.util.Vector;
 
 /*
- * Vector
- * ArrayList
+ * Vector: synchronized, 10,15
+ * ArrayList: asynchronized, 10,20,30
  * 
  * add
  * add(pos,object)
