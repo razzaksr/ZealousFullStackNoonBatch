@@ -37,7 +37,7 @@ public class Supreme implements Retail
 		p.enquiry("Nokia");
 		p.enquiry(3);
 		p.discount(15000);
-		//p.sortByBrand();
+		p.sortByBrand();
 		p.list();
 	}
 

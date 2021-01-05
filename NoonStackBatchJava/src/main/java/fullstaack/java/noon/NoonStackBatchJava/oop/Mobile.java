@@ -2,7 +2,7 @@ package fullstaack.java.noon.NoonStackBatchJava.oop;
 
 import java.io.Serializable;
 
-public class Mobile implements Serializable, Comparable<Mobile>
+public class Mobile implements Serializable, Comparable
 {
 	private String model,brand,features;
 	private int ram,internal,price,qty;
@@ -77,9 +77,10 @@ public class Mobile implements Serializable, Comparable<Mobile>
 		this.qty = qty;
 	}
 	@Override
-	public int compareTo(Mobile o) {
-		// TODO Auto-generated method stub
-		int pos=this.brand.compareTo(o.brand);
-		return pos==0?this.brand.compareTo(o.brand):pos;
+	public int compareTo(Object o) 
+	{
+		/*String com=((Mobile)o).getBrand();
+		return this.brand-com;*/
+		return this.brand.compareTo(((Mobile)o).brand);
 	}
 }
