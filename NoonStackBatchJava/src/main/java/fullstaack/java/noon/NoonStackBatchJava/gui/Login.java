@@ -44,7 +44,7 @@ public class Login extends JFrame {
 	 * Create the frame.
 	 */
 	public Login() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\DOLL\\Downloads\\mob.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("mob.jpg"));
 		setTitle("Login Into the MobileExpress");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -91,13 +91,16 @@ public class Login extends JFrame {
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(Login.this, "Login Pressed");
+				//JOptionPane.showMessageDialog(Login.this, "Login Pressed");
 				//System.out.println("Login pressed");
 				String one=textField.getText();
 				String two=passwordField.getText();
 				if(one.equals("arunriyazaravind")&&two.equals("mobileexpress"))
 				{
 					JOptionPane.showMessageDialog(Login.this, "Login Authorised");
+					ShopHome home=new ShopHome();
+					home.setVisible(true);
+					Login.this.dispose();
 				}
 				else
 				{
