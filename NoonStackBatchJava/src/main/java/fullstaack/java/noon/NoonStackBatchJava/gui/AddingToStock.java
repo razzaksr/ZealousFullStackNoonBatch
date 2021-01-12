@@ -56,7 +56,7 @@ public class AddingToStock extends JFrame {
 	public AddingToStock() {
 		setResizable(false);
 		setTitle("New Item to Stock");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 675, 494);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.BLACK);
@@ -208,7 +208,12 @@ public class AddingToStock extends JFrame {
 				mob.setRam(Integer.parseInt(textField_1.getText()));
 				mob.setInternal(Integer.parseInt(textField_2.getText()));
 				Object[] each=(Object[])list.getSelectedValues();
-				mob.setFeatures(Arrays.toString(each));
+				String data="";
+				for(Object y:each)
+				{
+					data+=y+",";
+				}
+				mob.setFeatures(data);
 				mob.setQty(Integer.parseInt(textField_3.getText()));
 				mob.setSize(Float.parseFloat(textField_4.getText()));
 				mob.setPrice(Integer.parseInt(textField_5.getText()));

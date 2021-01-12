@@ -22,11 +22,15 @@ import java.util.List;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import java.awt.FlowLayout;
+import javax.swing.JTextField;
+import javax.swing.JButton;
 
 public class ShopHome extends JFrame
 {
 	private JPanel contentPane;
 	static List<Mobile> stock=new ArrayList<Mobile>();
+	
 
 	/**
 	 * Launch the application.
@@ -59,7 +63,7 @@ public class ShopHome extends JFrame
 		setBackground(Color.BLACK);
 		setTitle("Mobile Express Home");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 501, 454);
 		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setForeground(Color.BLACK);
@@ -73,7 +77,6 @@ public class ShopHome extends JFrame
 		JMenuItem mntmNewMenuItem = new JMenuItem("Add to Stock");
 		mntmNewMenuItem.setForeground(Color.YELLOW);
 		mntmNewMenuItem.setBackground(Color.BLACK);
-		mnNewMenu.add(mntmNewMenuItem);
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			
 			@Override
@@ -83,6 +86,23 @@ public class ShopHome extends JFrame
 				adding.setVisible(true);
 			}
 		});
+		mnNewMenu.add(mntmNewMenuItem);
+		
+		
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("View Items");
+		mntmNewMenuItem_1.setBackground(Color.BLACK);
+		mntmNewMenuItem_1.setForeground(Color.YELLOW);
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				View view=new View();
+				view.setVisible(true);
+			}
+		});
+		mnNewMenu.add(mntmNewMenuItem_1);
+		
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -94,6 +114,7 @@ public class ShopHome extends JFrame
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setForeground(Color.YELLOW);
 		contentPane.add(lblNewLabel, BorderLayout.CENTER);
+		
 	}
 
 }
