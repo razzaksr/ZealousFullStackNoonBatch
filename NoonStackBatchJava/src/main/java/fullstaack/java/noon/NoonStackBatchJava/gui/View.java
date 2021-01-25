@@ -27,12 +27,21 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.Collections;
+
+import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
 
 public class View extends JFrame {
+	public static String field;
 
 	private JPanel contentPane;
 	private JTable table;
-	DefaultTableModel model;
+	static DefaultTableModel model;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -41,6 +50,9 @@ public class View extends JFrame {
 	private JTextField textField_6;
 	private JTextField textField_5;
 	private JTextField textField_4;
+	private JRadioButton Ascending;
+	private JRadioButton Descending;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	/**
 	 * Launch the application.
@@ -64,9 +76,30 @@ public class View extends JFrame {
 	
 	
 	public View() {
+		
+				model=new DefaultTableModel();
+				
+				model.addColumn("Model");
+				model.addColumn("Brand");
+				model.addColumn("RAM");
+				model.addColumn("Internal");
+				model.addColumn("Features");
+				model.addColumn("Display Size");
+				model.addColumn("Quantity");
+				model.addColumn("Price");
+				
+				for(int index=0;index<ShopHome.stock.size();index++)
+				{
+					model.addRow(new Object[] {
+							ShopHome.stock.get(index).getModel(),ShopHome.stock.get(index).getBrand(),
+							ShopHome.stock.get(index).getRam(),ShopHome.stock.get(index).getInternal(),
+							ShopHome.stock.get(index).getFeatures(),ShopHome.stock.get(index).getSize(),
+							ShopHome.stock.get(index).getQty(),ShopHome.stock.get(index).getPrice()
+					});
+				}
 		setTitle("Viewing Items");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 583, 417);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -82,32 +115,13 @@ public class View extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		contentPane.add(scrollPane, BorderLayout.CENTER);
 		
-		model=new DefaultTableModel();
-		
-		model.addColumn("Model");
-		model.addColumn("Brand");
-		model.addColumn("RAM");
-		model.addColumn("Internal");
-		model.addColumn("Features");
-		model.addColumn("Display Size");
-		model.addColumn("Quantity");
-		model.addColumn("Price");
-		
-		for(int index=0;index<ShopHome.stock.size();index++)
-		{
-			model.addRow(new Object[] {
-					ShopHome.stock.get(index).getModel(),ShopHome.stock.get(index).getBrand(),
-					ShopHome.stock.get(index).getRam(),ShopHome.stock.get(index).getInternal(),
-					ShopHome.stock.get(index).getFeatures(),ShopHome.stock.get(index).getSize(),
-					ShopHome.stock.get(index).getQty(),ShopHome.stock.get(index).getPrice()
-			});
-		}
-		
-		
 		table = new JTable(model);
 		table.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				int col=table.getSelectedColumn();
+				field=model.getColumnName(col);
+				JOptionPane.showMessageDialog(View.this, field);
 				int row=table.getSelectedRow();
 				textField.setText(""+model.getValueAt(row, 0));
 				textField_1.setText(""+model.getValueAt(row, 1));
@@ -189,9 +203,40 @@ public class View extends JFrame {
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Delete");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ShopHome.stock.remove(ShopHome.stock.get(table.getSelectedRow()));
+				JOptionPane.showMessageDialog(View.this, "Mobile Deleted from Stock");
+			}
+		});
 		btnNewButton_1.setForeground(Color.YELLOW);
 		btnNewButton_1.setBackground(Color.BLACK);
 		panel.add(btnNewButton_1);
+		
+		Ascending = new JRadioButton("Ascending");
+		Ascending.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent e) {
+				Collections.sort(ShopHome.stock);
+				JOptionPane.showMessageDialog(View.this, "Sorted");
+			}
+		});
+		Ascending.setBackground(Color.BLACK);
+		Ascending.setForeground(Color.YELLOW);
+		buttonGroup.add(Ascending);
+		panel.add(Ascending);
+		
+		Descending = new JRadioButton("Descending");
+		Descending.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent e) {
+				Collections.sort(ShopHome.stock);
+				Collections.reverse(ShopHome.stock);
+				JOptionPane.showMessageDialog(View.this, "Reversed");
+			}
+		});
+		Descending.setBackground(Color.BLACK);
+		Descending.setForeground(Color.YELLOW);
+		buttonGroup.add(Descending);
+		panel.add(Descending);
 		
 	}
 
