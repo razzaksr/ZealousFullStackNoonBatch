@@ -3,6 +3,46 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Primaries</title>
+<style type="text/css">
+p
+{
+background-color: navy;
+color: olive;
+font: 14px;
+font-style: italic;
+font-family: cursive;
+}
+.iron
+{
+border: 5px;
+border-color: purple;
+border-bottom-style: dotted;
+border-top-style: dashed;
+border-left-style: double;
+border-right-style: hidden;
+background-color: orange;
+color: white;
+}
+.steve
+{
+border: 10px;
+border-style:groove;
+border-left-color: aqua;
+border-right-color: green;
+border-top-color: navy;
+border-bottom-color: lime;
+}
+#first
+{
+color:red;
+background-color:yellow;
+}
+#first:hover
+{
+color:blue;
+background-color:yellow;
+}
+</style>
 </head>
 <body>
 <h3>About US</h3>
@@ -15,7 +55,7 @@ MAD Scientist, Ivan vanko, Mandarin, Skull, Hydra,... etc.</p>
 <center>
 <hr color="maroon">
 <font face="Segoe Script" color="gold"><h3>Iron Man Series</h3></font>
-<ol type='A'><!-- Ordered List -->
+<ol class="iron" type='A'><!-- Ordered List -->
 <li>Dawn of Iron man</li><!-- List Item -->
 <li>Arc Reacter</li>
 <LI>Mandarin</LI>
@@ -23,8 +63,8 @@ MAD Scientist, Ivan vanko, Mandarin, Skull, Hydra,... etc.</p>
 <hr color="blue">
 <font color="blue"><h3>Captain America Series</h3></font>
 <!-- Unordered List -->
-<ul type="square">
-<li>Courage to Idol</li>
+<ul class="steve" type="square">
+<li id="first">Courage to Idol</li>
 <li>Meeting with Buggy</li>
 <li>Dispute with Colleagues</li>
 </ul>
