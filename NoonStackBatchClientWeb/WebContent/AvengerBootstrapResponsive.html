@@ -9,6 +9,13 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<!-- For logo and additional purpose -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
 <style type="text/css">
 #menu-gap
 {
@@ -29,10 +36,10 @@
 					<a href="#" class="navbar-link btn btn-light badge-pill">Home</a>
 				</li>
 				<li class="navbar-item" id="menu-gap">
-					<a href="#" class="navbar-link btn btn-light badge-pill">Versions</a>
+					<a href="#version" class="navbar-link btn btn-light badge-pill">Versions</a>
 				</li>
 				<li class="navbar-item" id="menu-gap">
-					<a href="#" class="navbar-link btn btn-light badge-pill">Features</a>
+					<a href="#features" class="navbar-link btn btn-light badge-pill">Features</a>
 				</li>
 				<li class="navbar-item" id="menu-gap">
 					<a href="#" class="navbar-link btn btn-light badge-pill">Services</a>
@@ -108,11 +115,87 @@
 		</div>
 	</div>
 </div>
+<div class="container-fluid padding" id="version">
+	<hr class="my-4">
+	<h1 class="display-4 text-center padding">Versions</h1>
+	<div class="row text-center padding">
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<img src="images/street160.jpg" height="100" width="200"/>
+			<h2>Street 150</h2>
+			<p class="lead">Avenger Street with matte finishing of 150 CC</p>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<img src="images/street220.jpg" height="100" width="200"/>
+			<h2>Street 220</h2>
+			<p class="lead">Avenger Street with matte finishing of 220 CC</p>
+		</div>
+		<div class="col-sm-12 col-md-4">
+			<img src="images/cruise220.jpg" height="100" width="200"/>
+			<h2>Cruise 220</h2>
+			<p class="lead">Avenger Cruise with HD model finishing of 220 CC</p>
+		</div>
+	</div>
+	<hr class="my-4">
+</div>
+
+<div class="container-fluid padding" id="features">
+	<h1 class="text-center padding">Features</h1>
+	<hr class="my-4">
+	<div class="row padding">
+		<div class="col-lg-6">
+			<h3>Awesome features of Avenger</h3>
+			<p class="lead">Multi function display, odo, trip, speed</p>
+			<p class="lead">Classic design head lamp</p>
+			<p class="lead">220c DTSi Engine</p>
+			<p class="lead">Oil cooling</p>
+			<a href="#">
+				<button class="btn btn-outline-warning">More</button>
+			</a>
+		</div>
+		<div class="col-lg-6">
+			<div class="carousel slide" data-ride="carousel" id="feat">
+				<!-- indicators in the bottom of the slide -->
+				<ol class="carousel-indicators">
+					<li data-target="#feat" data-slide-to="0" class="active"></li>
+					<li data-target="#feat" data-slide-to="1"></li>
+					<li data-target="#feat" data-slide-to="2"></li>
+					<li data-target="#feat" data-slide-to="3"></li>
+				</ol>
+				<!-- Slide Body/inner -->
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="images/feat1.jpg" class="d-block w-100">
+					</div>
+					<div class="carousel-item">
+						<img src="images/feat2.jpg" class="d-block w-100">
+					</div>
+					<div class="carousel-item">
+						<img src="images/feat3.jpg" class="d-block w-100">
+					</div>
+					<div class="carousel-item">
+						<img src="images/feat4.jpg" class="d-block w-100">
+					</div>
+			</div>
+			<!-- Previous and next icons -->
+			<a href="#feat" role="button" class="carousel-control-prev" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Prev</span>
+			</a>
+			<a href="#feat" role="button" class="carousel-control-next" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+		</div>
+	</div>
+	<hr class="my-4">
+</div>
 
 <!-- Connect -->
 <div class="container-fluid">
 	<div class="w-50 p-3" id="connect">
 		<h1>Connect to US</h1>
+		<hr class="my-4">
 		<form class="form">
 			<div class="form group">
 				<label for="name">Name</label>
