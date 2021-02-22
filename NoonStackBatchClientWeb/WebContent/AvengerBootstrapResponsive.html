@@ -17,6 +17,13 @@
 <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
 <style type="text/css">
+
+#icons
+{
+height:150px;
+width:250px;
+}
+
 #menu-gap
 {
 	padding:5px 5px;
@@ -27,7 +34,7 @@
 <!-- Navigation Menu -->
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
 	<div class="container-fluid">
-		<a href="#" class="navbar-brand"><img src="images/logo.png"></a>
+		<a href="#" class="navbar-brand"><img style="height:80px;width:150px" src="images/logo.png"></a>
 		<button class="navbar-toggler" data-toggle="collapse" data-target="#mine">
 		<span class="navbar-toggler-icon"></span></button>
 		<div class="collapse navbar-collapse" id="mine">
@@ -42,7 +49,7 @@
 					<a href="#features" class="navbar-link btn btn-light badge-pill">Features</a>
 				</li>
 				<li class="navbar-item" id="menu-gap">
-					<a href="#" class="navbar-link btn btn-light badge-pill">Services</a>
+					<a href="#service" class="navbar-link btn btn-light badge-pill">Services</a>
 				</li>
 				<li class="navbar-item" id="menu-gap">
 					<a href="#connect" class="navbar-link btn btn-light badge-pill">Connect</a>
@@ -191,11 +198,58 @@
 	<hr class="my-4">
 </div>
 
+<div class="container-fluid padding" id="service">
+	<h1 class="text-center padding">Service's</h1>
+	<hr class="my-4">
+	<div class="row padding">
+		<div class="col-md-4">
+			<div class="card">
+				<img src="images/service1.jpg" style="width:398px;height:223px" class="card-image-top"/>
+				<div class="card-body">
+					<h3 class="card-title">Wheel Alignment</h3>
+					<p class="card-text">
+						Complete wheel check, 
+						alignment and modifications will be made quickly
+					</p>
+					<a class="btn btn-outline-warning">Know More</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card">
+				<img src="images/service3.jpg" style="width:398px;height:223px" class="card-image-top"/>
+				<div class="card-body">
+					<h3 class="card-title">Engine Service</h3>
+					<p class="card-text">
+						Engine service, warranty claim, replacement made easily
+					</p>
+					<a class="btn btn-outline-warning">Know More</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card">
+				<img src="images/service4.jpg" style="width:398px;height:223px" class="card-image-top"/>
+				<div class="card-body">
+					<h3 class="card-title">General Service</h3>
+					<p class="card-text">
+						Complete general service with milage checkup, oil checkup, tuning etc,.
+					</p>
+					<a class="btn btn-outline-warning">Know More</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr class="my-4">
 <!-- Connect -->
-<div class="container-fluid">
-	<div class="w-50 p-3" id="connect">
-		<h1>Connect to US</h1>
-		<hr class="my-4">
+<div class="container-fluid padding" id="connect">
+	<h1 class="text-center padding">Connect to US</h1>
+	<hr class="my-4">
+	<div class="row padding">
+	<!-- <div class="w-50 p-3" > -->
+	<div class="col-lg-6">
 		<form class="form">
 			<div class="form group">
 				<label for="name">Name</label>
@@ -223,6 +277,59 @@
 			
 		</form>
 	</div>
+	<div class="col-lg-6" >
+		<div class="social padding row">
+			<div class="col-sm-4">
+				<a href="https://www.facebook.com"><i id="icons" class="fab fa-facebook"></i></a>
+			</div>
+			<div class="col-sm-4">
+				<a href="https://www.linkedin.com"><i id="icons" class="fab fa-linkedin"></i></a>
+			</div>
+		</div>
+		<div class="social padding row">
+			<div class="col-sm-4">
+				<a href="https://www.instagram.com"><i id="icons" class="fab fa-instagram"></i></a>
+			</div>
+			<div class="col-sm-4">
+				<a href="https://www.twitter.com"><i id="icons" class="fab fa-twitter"></i></a>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+<div class="container-fluid padding">
+	<hr class="my-4">
+	<footer class="bg-secondary text-warning text-center">
+		<div class="row padding text-center" style="font-family: cursive;font-size: 18px">
+			<div class="col-md-4">
+				<img src="images/logo.png" style="height:80px;width:150px">
+				<hr color="yellow">
+				<h4>Corporate Address:</h4>
+				<p>Bajaj Automobiles incorporation</p>
+				<p>Pune</p>
+				<p>Maharashtra</p>
+			</div>
+			<div class="col-md-4">
+				<h4>Branch Address</h4>
+				<p>Swarnambigai Bajaj</p>
+				<p>Dhadhagapatti</p>
+				<p>Salem</p>
+				<p>Tamilnadu</p>
+			</div>
+			<div class="col-md-4">
+				<h4>Featured Model's</h4>
+				<p>Avenger Cruise 220</p>
+				<p>Avenger Street 220</p>
+				<p>Avenger Street 160</p>
+				<p>Avenger Street 150</p>
+				<p>Vikrant</p>
+			</div>
+		</div>
+		<div class="col-lg-12">
+			<hr class="warning">
+			<h5>All the copyrights reserved to &copy; www.zealoustechcorp.com</h5>
+		</div>
+	</footer>
 </div>
 </body>
 </html>
