@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Script Basic Operations</title>
+</head>
+<body>
+<script>
+var commercial=prompt("Tell us your commercial per day: ","");
+var days=prompt("Tell us your number of days allocate: ","");
+var income=commercial*days;
+if(income>30000)
+{
+	alert('10 percent tds');
+	income-=(income*0.100)
+}
+else
+{
+	alert('7.5 percent tds');
+	income-=(income*0.070)
+} 
+alert("Total income is: "+income);
+</script>
+<h1 id="check"></h1>
+</body>
+</html>
