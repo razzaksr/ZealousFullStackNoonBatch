@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>DocumentObjectModel</title>
+<script type="text/javascript">
+function show()
+{
+	alert(document.getElementById('head1').innerHTML);
+	const obj=document.getElementById('fact');
+	obj.innerHTML="Kelly 'The Swift' Warrior";
+}
+</script>
+</head>
+<body>
+<div id="source">
+	<h1 id="head1" contenteditable="true">Heading 1</h1>
+	<button onclick="show()">Check DOM</button>
+	<p id="fact"></p>
+</div>
+</body>
+</html>
