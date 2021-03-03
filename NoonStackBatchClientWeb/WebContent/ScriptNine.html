@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Validations basic</title>
+<script type="text/javascript">
+function valid()
+{
+	var a=document.forms['riyaz'].pass.value;
+	var b=document.forms['riyaz'].conpass.value;
+	var reg=/^(?=.*[0-9])(?=.*[!@#$%])[a-zA-Z0-9!@#$%]{8,}$/;
+	//alert('data gonna validate');
+	//alert(!reg.test(a));
+	
+	// field/ form validation
+		// data validation
+		if(!(reg.test(a)||reg.test(b)))
+		{
+			alert("Password should contain alpha,numeric and special chars also length should be 8");
+			return false;
+		}
+		else
+		{
+			if(a!=b)
+			{
+				alert("Password mismatch");
+				return false;
+			}
+			else
+			{
+				return true;
+				//window.location.assign('AvengerBootstrapResponsive.html');
+			}
+		}
+	document.forms['riyaz'].pass.value="";
+	document.forms['riyaz'].conpass.value="";
+}
+</script>
+</head>
+<body>
+<form name="riyaz" onsubmit="return valid()" action="AvengerBootstrapResponsive.html">
+	<input type="password" name="pass">
+	<input type="password" name="conpass">
+	<!-- <input type="button" onclick="valid()" value="validate"> -->
+	<input type="submit" value="Enroll">
+</form>
+</body>
+</html>
