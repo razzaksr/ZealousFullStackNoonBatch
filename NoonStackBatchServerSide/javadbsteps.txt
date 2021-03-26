@@ -1,0 +1,124 @@
+Back End/ Data Access technology:
+File system
+Database server: 
+
+Collections/files:No SQL
+Mongo Atlas
+.
+.
+.
+
+Relational Data base Management System(tables): SQL
+
+database/ Project
+tables/ Class
+columns/ Members
+rows/ Objects
+
+
+java data types		sql data/column types;should mention length(count)
+int			int
+String			varchar
+long			bigint
+float			float
+double			double
+Date>>java.util		Date>> java.sql
+boolean			bool
+
+
+
+MS SQL
+Oracle
+Derby
+MySQL:
+location:localhost/ ipaddress
+user name:root
+password:
+port:3306
+
+
+Command Line Interface:
+GUI:
+XAMPP/WAMPP: 
+apache>> show db server in browser: 80
+mysql>>> actual database server: 3306
+
+Browser>> localhost>> PHP MyAdmin>> database server
+
+Structured Query Language(SQL):
+
+Create database: collection of tables
+create database fullstackjavanoon
+
+Create Table: collection of different types of columns/fields
+create table account(number bigint(15) not null, holder varchar(50) not null,
+balance double not null, sno int(4)not null)
+
+Create Primary Key:
+ALTER TABLE `account` ADD PRIMARY KEY(`number`);
+
+Remove existing column:
+ALTER TABLE `account` DROP `sno`;
+
+Adding new Column after table creation:
+ALTER TABLE `account` ADD `pan` VARCHAR(10) NOT NULL AFTER `sno`;
+
+Change table fields:
+ALTER TABLE `account` CHANGE `sno` `sno` SMALLINT(4) NOT NULL;
+
+Auto increment:
+ALTER TABLE `account` CHANGE `number` `number` BIGINT(15) NOT NULL AUTO_INCREMENT;
+
+Insert Records/Rows:
+INSERT INTO `account` (`number`, `holder`, `balance`, `pan`) VALUES ('876545678', 'Riyaz', '20000', 'ABCD7789S'), ('12345678', 'Arun', '10000', 'DSDW1233S'), (NULL, 'Mohamed', '1000.8', 'ABC9999c');
+
+
+Update Records:
+UPDATE `account` SET `holder` = 'Arunachalam', `balance` = '9870' WHERE `account`.`number` = 12345678;
+
+
+Fetch Records: SELECT COLUMNS FROM TABLENAME WHERE CONDITION
+a. fetch one row's particular columns(one or more):
+SELECT `balance` FROM `account` WHERE `holder`='Riyaz'
+SELECT `balance`,`pan` FROM `account` WHERE `holder`='Riyaz'
+
+b. fetch one row's all columns:
+SELECT * FROM `account` WHERE `holder`='Arunachalam'
+
+c. fetch all row's particular columns(one or more):
+SELECT `holder` FROM `account`;
+SELECT `holder`,`pan` FROM `account`
+
+
+d. fetch all row's all columns
+SELECT * FROM account
+
+
+Delete records:DELETE FROM TABLE WHERE CONDITION
+a. delete particular row:
+DELETE FROM `account` WHERE `account`.`holder` = \'Mohamed\' AND `account`.`pan` = \'ABC9999c\'
+
+b. delete all row:
+TRUNCATE `fullstackjavanoon`.`account`
+
+
+Drop:
+a. table:
+DROP TABLE `fullstackjavanoon`.`account`
+
+b. data base:
+DROP DATABASE `fullstackjavanoon`
+
+
+Connection Steps:
+1. Initilaize Driver:
+download mysql-connector.jar and paste inside lib folder
+
+Class.forName("com.mysql.cj.jdbc.Driver")
+ClassNotFoundException
+
+2. Establish connection
+3. Writing query
+4. Writing Statement
+5. Executing Query
+
