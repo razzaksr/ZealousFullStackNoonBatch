@@ -13,8 +13,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>Zealous Placement Buddy Home</h1>
-<h3>We welcome you!!! ${requestScope.logged}</h3>
 <div class="container">
 	<a href="enroll.jsp" class="btn btn-outline-warning">Enroll Candidate</a>
 </div>

@@ -14,10 +14,11 @@
 </head>
 <body>
 <div class="container">
+	<p class="display-7 text-danger">${info}</p>
 	<div class="justify-conetnt-center">
 		<div class="padding"><!-- <div class="col-xs-12 col-sm-12 col-md-6"> -->
 			<h1 class="display-4 text-primary">Placement buddy enrollment</h1>
-			<form class="form text-primary" action="#" method="post">
+			<form class="form text-primary" action="feed" method="post">
 				<div class="form group">
 					<label for="regno">Register Number</label>
 					<input type="number" name="regno" class="form-control" placeholder="REgister Number">
@@ -52,7 +53,7 @@
 				</div>
 				<div class="form group">
 					<label for="add">Address</label>
-					<input type="text" name="add" class="form-control" placeholder="Address">
+					<input type="text" name="address" class="form-control" placeholder="Address">
 				</div>
 				<div class="form group">
 					<label for="cgpa">CGPA</label>
@@ -83,10 +84,10 @@
 					<label for="skills">Skills</label>
 					<input type="text" name="skills" class="form-control" placeholder="Skills">
 				</div>
-				<div class="form group">
+				<!-- <div class="form group">
 					<label for="placed">Placed concerns</label>
 					<input type="text" name="placed" class="form-control" placeholder="Placed concerns">
-				</div>
+				</div> -->
 				
 				<input type="submit" value="Enroll" class="btn btn-outline-dark">
 				<input style="margin-left: 300px;" type="reset" value="Clean" class="btn btn-outline-secondary">

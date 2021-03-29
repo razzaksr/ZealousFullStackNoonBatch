@@ -110,15 +110,33 @@ b. data base:
 DROP DATABASE `fullstackjavanoon`
 
 
-Connection Steps:
+categories:
+ddl>> create, alter, drop
+dml>> insert, update
+
+
+
+Connection Steps: java.sql
 1. Initilaize Driver:
 download mysql-connector.jar and paste inside lib folder
 
 Class.forName("com.mysql.cj.jdbc.Driver")
 ClassNotFoundException
 
-2. Establish connection
-3. Writing query
-4. Writing Statement
-5. Executing Query
+2. Establish connection:
+Connection obj=DriverManager.getConnection("location","user","pass")
+SQLException
 
+3. Writing query:
+String qObj="";
+
+4. Writing Statement:
+a. Statement>>  static
+b. PreparedStatement>> dynamic 
+c. CallableStatement>> PL/SQL
+
+PreparedStatement pObj=obj.prepareStatement(qObj)
+
+5. Executing Query
+pObj.executeUpdate()>> int>> 0
+pObj.executeQuery()>> ResultSet>> next()>> true 
