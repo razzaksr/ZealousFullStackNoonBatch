@@ -14,7 +14,8 @@
 </head>
 <body>
 <div class="container">
-	<a href="enroll.jsp" class="btn btn-outline-warning">Enroll Candidate</a>
+	<a href="enroll.jsp" class="btn btn-outline-warning badge-pill">Enroll Candidate</a>
+	<a href="viewall" class="btn btn-outline-warning badge-pill">List Candidate</a>
 </div>
 </body>
 </html>
