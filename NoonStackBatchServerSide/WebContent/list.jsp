@@ -18,6 +18,7 @@
 <!-- Scriptlet tag -->
 <% Vector<Candidates> all=(Vector<Candidates>)request.getAttribute("every"); %> 
 <div class="container-fluid">
+	<h2 class="text-center text-warning">${info }</h2>
 	<h1 class="display-4 text-center">List of Candidates</h1>
 	<table class="table table-hover text-light bg-secondary">
 		<thead class="text-light">
@@ -43,7 +44,7 @@
 						<td><%=tmp.getStatus() %></td><td><%=tmp.getPlacedCompany() %></td>
 						<td>
 							<a href="edit?id=<%=tmp.getRegno() %>" class="btn btn-outline-success">Edit</a>
-							<a href="#" class="btn btn-outline-danger">Delete</a>
+							<a href="delete?id=<%=tmp.getRegno() %>" class="btn btn-outline-danger">Delete</a>
 						</td>
 					</tr>					
 				<% }%>

@@ -22,7 +22,6 @@ import core.mod.Candidates;
  */
 @WebServlet("/viewall")
 public class ListServlet extends HttpServlet {
-	static Vector<Candidates> model=new Vector<Candidates>();// db copy
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -38,6 +37,7 @@ public class ListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		Vector<Candidates> model=new Vector<Candidates>();// db copy
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/place_buddy","root","");

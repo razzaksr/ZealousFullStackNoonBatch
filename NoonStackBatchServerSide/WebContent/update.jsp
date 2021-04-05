@@ -14,72 +14,72 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </head>
 <body>
-<%Candidates can=(Candidates)request.getAttribute("single"); %>
+<%Candidates can=(Candidates)request.getAttribute("single");%>
 <div class="container">
 	<div class="justify-conetnt-center">
 		<div class="padding"><!-- <div class="col-xs-12 col-sm-12 col-md-6"> -->
 			<h1 class="display-4 text-primary">Placement buddy updation</h1>
-			<form class="form text-primary" action="#" method="post">
+			<form class="form text-primary" action="update" method="post">
 				<div class="form group">
 					<label for="regno">Register Number</label>
 					<input type="number" name="regno" class="form-control" 
 					placeholder="REgister Number"
-					value=<%=can.getRegno() %>>
+					value="<%=can.getRegno() %>">
 				</div>
 				<div class="form group">
 					<label for="name">Name of Candidate</label>
 					<input type="text" name="name" class="form-control" placeholder="Name"
-					value=<%=can.getName() %>>
+					value="<%=can.getName() %>">
 				</div>
 				<div class="form group">
 					<label for="gender">Gender</label>
 					<input type="text" name="gender" class="form-control" placeholder="gender"
-					value=<%=can.getGender() %>>
+					value="<%=can.getGender() %>">
 				</div>
 				<div class="form group">
 					<label for="dept">Department</label>
 					<input type="text" name="dept" class="form-control" placeholder="Department"
-					value=<%=can.getDept() %>>
+					value="<%=can.getDept() %>">
 				</div>
 				<div class="form group">
 					<label for="batch">Batch year</label>
 					<input type="number" name="batch" class="form-control" placeholder="Batch"
-					value=<%=can.getBatch() %>>
+					value="<%=can.getBatch() %>">
 				</div>
 				<div class="form group">
 					<label for="contact">Contact</label>
 					<input type="number" name="contact" class="form-control" placeholder="Contact Number"
-					value=<%=can.getContact() %>>
+					value="<%=can.getContact() %>">
 				</div>
 				<div class="form group">
 					<label for="email">Email</label>
 					<input type="email" name="email" class="form-control" placeholder="Email"
-					value=<%=can.getEmail() %>>
+					value="<%=can.getEmail() %>">
 				</div>
 				<div class="form group">
 					<label for="add">Address</label>
-					<input type="text" name="add" class="form-control" placeholder="Address"
-					value=<%=can.getAddress() %>>
+					<input type="text" name="address" class="form-control" placeholder="Address"
+					value="<%=can.getAddress() %>">
 				</div>
 				<div class="form group">
 					<label for="cgpa">CGPA</label>
 					<input type="number" name="cgpa" class="form-control" placeholder="CGPA"
-					value=<%=can.getCgpa() %>>
+					value="<%=can.getCgpa() %>">
 				</div>
 				<div class="form group">
 					<label for="hsc">Higher Secondary</label>
 					<input type="number" name="hsc" class="form-control" placeholder="Higher secondary"
-					value=<%=can.getHsc() %>>
+					value="<%=can.getHsc() %>">
 				</div>
 				<div class="form group">
 					<label for="diploma">Diploma</label>
 					<input type="number" name="diploma" class="form-control" placeholder="Diploma mark"
-					value=<%=can.getDiploma() %>>
+					value="<%=can.getDiploma() %>">
 				</div>
 				<div class="form group">
 					<label for="sslc">SSLC</label>
 					<input type="number" name="sslc" class="form-control" placeholder="SSLC mark"
-					value=<%=can.getSslc() %>>
+					value="<%=can.getSslc() %>">
 				</div>
 				<div class="form group row">
 					<div class="form-inline col">
@@ -106,12 +106,12 @@
 				<div class="form group">
 					<label for="skills">Skills</label>
 					<input type="text" name="skills" class="form-control" placeholder="Skills"
-					value=<%=can.getSkills() %>>
+					value="<%=can.getSkills() %>">
 				</div>
 				<div class="form group">
 					<label for="placed">Placed concerns</label>
 					<input type="text" name="placed" class="form-control" placeholder="Placed concerns"
-					value=<%=can.getPlacedCompany() %>>
+					value="<%=can.getPlacedCompany() %>">
 				</div>
 				
 				<input type="submit" value="Update" class="btn btn-outline-dark">
