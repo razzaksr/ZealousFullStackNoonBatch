@@ -16,6 +16,12 @@
 <body>
 <%Candidates can=(Candidates)request.getAttribute("single");%>
 <div class="container">
+	<%response.addHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+	response.addHeader("Pragma", "no-cache");
+	response.addHeader("Expiry", "0");
+	if(session.getAttribute("logged")!=null){ %>
+	<a href="home.jsp" class="btn btn-outline-success">Home</a>
+	<a href="logout" class="btn btn-outline-danger">Logout</a>
 	<div class="justify-conetnt-center">
 		<div class="padding"><!-- <div class="col-xs-12 col-sm-12 col-md-6"> -->
 			<h1 class="display-4 text-primary">Placement buddy updation</h1>
@@ -119,6 +125,9 @@
 			</form>
 		</div>
 	</div>
+	<%}else{
+	response.sendRedirect("index.jsp");
+	}%>
 </div>
 </body>
 </html>

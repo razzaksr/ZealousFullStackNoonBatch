@@ -18,7 +18,14 @@
 <!-- Scriptlet tag -->
 <% Vector<Candidates> all=(Vector<Candidates>)request.getAttribute("every"); %> 
 <div class="container-fluid">
+	<%response.addHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+	response.addHeader("Pragma", "no-cache");
+	response.addHeader("Expiry", "0");
+	if(session.getAttribute("logged")!=null){ %>
+	<a href="home.jsp" class="btn btn-outline-success">Home</a>
+	<a href="logout" class="btn btn-outline-danger">Logout</a>
 	<h2 class="text-center text-warning">${info }</h2>
+	<p class="display-1">${sessionScope.logged}</p>
 	<h1 class="display-4 text-center">List of Candidates</h1>
 	<table class="table table-hover text-light bg-secondary">
 		<thead class="text-light">
@@ -50,6 +57,10 @@
 				<% }%>
 		</tbody>
 	</table>
+	<a href="#" class="col-12 btn btn-outline-dark badge-pill">Print Report</a>
+	<%}else{
+	response.sendRedirect("index.jsp");
+	}%>
 </div>
 </body>
 </html>

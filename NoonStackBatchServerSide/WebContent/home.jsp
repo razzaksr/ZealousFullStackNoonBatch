@@ -14,8 +14,18 @@
 </head>
 <body>
 <div class="container">
+<%
+response.addHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+response.addHeader("Pragma", "no-cache");
+response.addHeader("Expiry", "0");
+if(session.getAttribute("logged")!=null){ %>
+	<p class="display-1">${sessionScope.logged}</p>
+	<a href="logout" class="btn btn-outline-danger">Logout</a>
 	<a href="enroll.jsp" class="btn btn-outline-warning badge-pill">Enroll Candidate</a>
 	<a href="viewall" class="btn btn-outline-warning badge-pill">List Candidate</a>
+	<%}else{
+	response.sendRedirect("index.jsp");
+	}%>
 </div>
 </body>
 </html>

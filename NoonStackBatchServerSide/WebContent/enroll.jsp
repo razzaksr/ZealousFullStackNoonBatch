@@ -14,8 +14,15 @@
 </head>
 <body>
 <div class="container">
-	<p class="display-7 text-danger">${info}</p>
+	<%response.addHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+	response.addHeader("Pragma", "no-cache");
+	response.addHeader("Expiry", "0");
+	if(session.getAttribute("logged")!=null){ %>
+		<p class="display-7 text-danger">${info}</p>
+	<p class="display-1">${sessionScope.logged}</p>
 	<div class="justify-conetnt-center">
+		<a href="home.jsp" class="btn btn-outline-success">Home</a>
+		<a href="logout" class="btn btn-outline-danger">Logout</a>
 		<div class="padding"><!-- <div class="col-xs-12 col-sm-12 col-md-6"> -->
 			<h1 class="display-4 text-primary">Placement buddy enrollment</h1>
 			<form class="form text-primary" action="feed" method="post">
@@ -94,6 +101,9 @@
 			</form>
 		</div>
 	</div>
+	<%}else{
+	response.sendRedirect("index.jsp");
+	}%>
 </div>
 </body>
 </html>
