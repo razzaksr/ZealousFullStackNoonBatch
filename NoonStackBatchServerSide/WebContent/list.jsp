@@ -57,7 +57,11 @@
 				<% }%>
 		</tbody>
 	</table>
-	<a href="#" class="col-12 btn btn-outline-dark badge-pill">Print Report</a>
+	<%-- <a href="print?collect<%=all%>" class="col-12 btn btn-outline-dark badge-pill">Print Report</a> --%>
+	<form action="printing.jsp">
+		<%pageContext.setAttribute("tobe", all, PageContext.APPLICATION_SCOPE);%>
+		<input type="submit" class="col-12 btn btn-outline-dark badge-pill" value="Print Report">
+	</form>
 	<%}else{
 	response.sendRedirect("index.jsp");
 	}%>
