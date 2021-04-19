@@ -68,7 +68,7 @@ public class EditServlet extends HttpServlet {
 				can.setDept(rs.getString("dept"));
 				can.setEmail(rs.getString("email"));
 				can.setGender(rs.getString("gender"));
-				can.setPlacedCompany(rs.getString("placed_company"));
+				can.setPlaced(rs.getString("placed"));
 				can.setSkills(rs.getString("skills"));
 				can.setStatus(rs.getString("status"));
 				request.setAttribute("single", can);

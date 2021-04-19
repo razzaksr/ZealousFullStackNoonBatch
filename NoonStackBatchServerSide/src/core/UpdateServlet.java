@@ -75,7 +75,7 @@ public class UpdateServlet extends HttpServlet {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/place_buddy","root","");
-			String qry="update candidates set regno=?,name=?,gender=?,dept=?,batch=?,contact=?,email=?,address=?,cgpa=?,hsc=?,diploma=?,sslc=?,skills=?,career=?,placed_company=?,status=? where regno=?";
+			String qry="update candidates set regno=?,name=?,gender=?,dept=?,batch=?,contact=?,email=?,address=?,cgpa=?,hsc=?,diploma=?,sslc=?,skills=?,career=?,placed=?,status=? where regno=?";
 			PreparedStatement ps=con.prepareStatement(qry);
 			ps.setLong(1, reg);ps.setString(2, b);ps.setString(3, c);
 			ps.setString(4, d);ps.setInt(5,year);ps.setLong(6, cont);ps.setString(7, g);

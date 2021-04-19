@@ -117,7 +117,7 @@
 				<div class="form group">
 					<label for="placed">Placed concerns</label>
 					<input type="text" name="placed" class="form-control" placeholder="Placed concerns"
-					value="<%=can.getPlacedCompany() %>">
+					value="<%=can.getPlaced() %>">
 				</div>
 				
 				<input type="submit" value="Update" class="btn btn-outline-dark">

@@ -48,7 +48,7 @@
 						<td><%=tmp.getEmail() %></td><td><%=tmp.getCgpa() %></td>
 						<td><%=tmp.getHsc() %></td><td><%=tmp.getDiploma() %></td>
 						<td><%=tmp.getSslc() %></td><td><%=tmp.getCareer() %></td>
-						<td><%=tmp.getStatus() %></td><td><%=tmp.getPlacedCompany() %></td>
+						<td><%=tmp.getStatus() %></td><td><%=tmp.getPlaced() %></td>
 						<td>
 							<a href="edit?id=<%=tmp.getRegno() %>" class="btn btn-outline-success">Edit</a>
 							<a href="delete?id=<%=tmp.getRegno() %>" class="btn btn-outline-danger">Delete</a>

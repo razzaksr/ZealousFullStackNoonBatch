@@ -1,3 +1,4 @@
+<%@page import="java.io.InputStream"%>
 <%@page import="net.sf.jasperreports.engine.xml.JRXmlLoader"%>
 <%@page import="net.sf.jasperreports.engine.design.JasperDesign"%>
 <%@page import="java.io.FileInputStream"%>
@@ -30,7 +31,8 @@ String hai="";
 try
 {
 	//File file = new File("buddy.jrxml");
-	JasperDesign jasperDesign = JRXmlLoader.load("buddy.jrxml");
+	InputStream resourceStream = session.getServletContext().getResourceAsStream("/files/buddy.jrxml");
+	JasperDesign jasperDesign = JRXmlLoader.load(resourceStream);
     //JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
     JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
     JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(can);
@@ -42,7 +44,7 @@ try
     	fgen=new File("zealous.pdf");
         JasperExportManager.exportReportToPdfFile(jasperPrint, fgen.getAbsolutePath());
     hai="Report generated @ "+fgen.getAbsolutePath();
-    System.out.println("Received @ report end after writing "+can);
+    System.out.println("Received @ report end after writing "+hai);
 }
 catch(JRException j)
 {j.printStackTrace();} 

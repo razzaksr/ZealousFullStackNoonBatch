@@ -3,11 +3,11 @@ package core.mod;
 public class Candidates 
 {
 	private Long regno,contact;
-	private String name,gender,dept,email,address,skills,placedCompany,status,career;
+	private String name,gender,dept,email,address,skills,placed,status,career;
 	private Integer batch;
 	private Double cgpa,hsc,diploma,sslc;
 	public Candidates(Long regno, Long contact, String name, String gender, String dept, String email, String address,
-			String skills, String placedCompany, String status, String career, Integer batch, Double cgpa, Double hsc,
+			String skills, String placed, String status, String career, Integer batch, Double cgpa, Double hsc,
 			Double diploma, Double sslc) {
 		super();
 		this.regno = regno;
@@ -18,7 +18,7 @@ public class Candidates
 		this.email = email;
 		this.address = address;
 		this.skills = skills;
-		this.placedCompany = placedCompany;
+		this.placed = placed;
 		this.status = status;
 		this.career = career;
 		this.batch = batch;
@@ -79,11 +79,11 @@ public class Candidates
 	public void setSkills(String skills) {
 		this.skills = skills;
 	}
-	public String getPlacedCompany() {
-		return placedCompany;
+	public String getPlaced() {
+		return placed;
 	}
-	public void setPlacedCompany(String placedCompany) {
-		this.placedCompany = placedCompany;
+	public void setPlaced(String placed) {
+		this.placed = placed;
 	}
 	public String getStatus() {
 		return status;
