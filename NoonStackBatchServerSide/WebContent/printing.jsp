@@ -45,6 +45,7 @@ try
         JasperExportManager.exportReportToPdfFile(jasperPrint, fgen.getAbsolutePath());
     hai="Report generated @ "+fgen.getAbsolutePath();
     System.out.println("Received @ report end after writing "+hai);
+    response.sendRedirect("home.jsp");
 }
 catch(JRException j)
 {j.printStackTrace();} 
