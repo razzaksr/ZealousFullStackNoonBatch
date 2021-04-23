@@ -33,7 +33,7 @@
 				<th>REgister Number</th><th>Name</th><th>Department</th><th>Year of Passedout</th>
 				<th>Address</th><th>Gender</th><th>Contact</th><th>Email</th><th>CGPA</th>
 				<th>HSC</th><th>Diploma</th><th>SSLC</th><th>Interest</th><th>Status</th>
-				<th>List of placed companies</th><th>Action</th>
+				<th>List of placed companies</th><th>Skills</th><th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -49,6 +49,7 @@
 						<td><%=tmp.getHsc() %></td><td><%=tmp.getDiploma() %></td>
 						<td><%=tmp.getSslc() %></td><td><%=tmp.getCareer() %></td>
 						<td><%=tmp.getStatus() %></td><td><%=tmp.getPlaced() %></td>
+						<td><%=tmp.getSkills() %></td>
 						<td>
 							<a href="edit?id=<%=tmp.getRegno() %>" class="btn btn-outline-success">Edit</a>
 							<a href="delete?id=<%=tmp.getRegno() %>" class="btn btn-outline-danger">Delete</a>
@@ -58,10 +59,12 @@
 		</tbody>
 	</table>
 	<%-- <a href="print?collect<%=all%>" class="col-12 btn btn-outline-dark badge-pill">Print Report</a> --%>
-	<form action="printing.jsp">
-		<%pageContext.setAttribute("tobe", all, PageContext.APPLICATION_SCOPE);%>
-		<input type="submit" class="col-12 btn btn-outline-dark badge-pill" value="Print Report">
-	</form>
+	<div class="row text-center justify-content-center">
+		<form action="printing.jsp">
+			<%pageContext.setAttribute("tobe", all, PageContext.APPLICATION_SCOPE);%>
+			<input type="submit" class="btn btn-outline-dark badge-pill" value="Print Report">
+		</form>
+	</div>
 	<%}else{
 	response.sendRedirect("index.jsp");
 	}%>

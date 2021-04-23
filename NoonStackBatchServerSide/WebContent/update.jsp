@@ -15,7 +15,7 @@
 </head>
 <body>
 <%Candidates can=(Candidates)request.getAttribute("single");%>
-<div class="container">
+<div class="container-fluid">
 	<%response.addHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 	response.addHeader("Pragma", "no-cache");
 	response.addHeader("Expiry", "0");
@@ -120,8 +120,10 @@
 					value="<%=can.getPlaced() %>">
 				</div>
 				
-				<input type="submit" value="Update" class="btn btn-outline-dark">
-				<input style="margin-left: 300px;" type="reset" value="Clean" class="btn btn-outline-secondary">
+				<div class="my-4 row justify-content-around">
+					<input type="submit" value="Update" class="btn btn-outline-dark">
+					<input style="margin-left: 300px;" type="reset" value="Clean" class="btn btn-outline-secondary">
+				</div>
 			</form>
 		</div>
 	</div>

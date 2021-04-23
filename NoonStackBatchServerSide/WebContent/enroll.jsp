@@ -13,7 +13,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
 	<%response.addHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 	response.addHeader("Pragma", "no-cache");
 	response.addHeader("Expiry", "0");
@@ -95,9 +95,10 @@
 					<label for="placed">Placed concerns</label>
 					<input type="text" name="placed" class="form-control" placeholder="Placed concerns">
 				</div> -->
-				
-				<input type="submit" value="Enroll" class="btn btn-outline-dark">
-				<input style="margin-left: 300px;" type="reset" value="Clean" class="btn btn-outline-secondary">
+				<div class="my-4 row justify-content-around">
+					<input type="submit" value="Enroll" class="btn btn-outline-dark">
+					<input style="margin-left: 300px;" type="reset" value="Clean" class="btn btn-outline-secondary">
+				</div>
 			</form>
 		</div>
 	</div>

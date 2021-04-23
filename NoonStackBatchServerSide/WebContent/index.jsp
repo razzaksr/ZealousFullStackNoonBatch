@@ -13,26 +13,28 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="container padding">
+<div class="container-fluid">
 	<h1 class="text-primary text-center display-4"> Zealous Placement Buddy </h1>
-	<hr class="my-4">
 	<h5 class="text-danger">${requestScope.info}</h5>
-	<form class="row col-lg-4 offset-lg-4" action="authenticate" method="post">
-		<div class="padding justify-content-center">
-			<div class="form group">
-			<label for="user">User Name</label>
-			<input type="text" name="user" placeholder="Enter the username" class="form-control">
+	<div class="card shadow-lg rounded-1 my-lg-6">
+		<!-- <hr class="my-4"> -->
+		<div class="row justify-content-center">
+			<form class="form" action="authenticate" method="post">
+				<div class="form group">
+					<label for="user">User Name</label>
+					<input type="text" name="user" placeholder="Enter the username" class="form-control">
+				</div>
+				<div class="form group">
+					<label for="pass">Password</label>
+					<input type="password" name="pass" placeholder="Enter the password" class="form-control">
+				</div>
+				<div class="text-center mt-3">
+					<input type="submit" value="Login" class="btn btn-outline-success ">
+					<input type="reset" value="Clear" class="btn btn-outline-secondary ">
+				</div>
+			</form>
 		</div>
-		<div class="form group">
-			<label for="pass">Password</label>
-			<input type="password" name="pass" placeholder="Enter the password" class="form-control">
-		</div>
-		<div class="text-center mt-3">
-			<input type="submit" value="Login" class="btn btn-outline-success ">
-			<input type="reset" value="Clear" class="btn btn-outline-secondary ">
-		</div>
-		</div>
-	</form>
+	</div>
 </div>
 </body>
 </html>
