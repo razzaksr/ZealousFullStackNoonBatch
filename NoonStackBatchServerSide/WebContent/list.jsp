@@ -27,7 +27,7 @@
 	<h2 class="text-center text-warning">${info }</h2>
 	<p class="display-1">${sessionScope.logged}</p>
 	<h1 class="display-4 text-center">List of Candidates</h1>
-	<table class="table table-hover text-light bg-secondary">
+	<table class="table table-hover text-light bg-secondary rounded">
 		<thead class="text-light">
 			<tr>
 				<th>REgister Number</th><th>Name</th><th>Department</th><th>Year of Passedout</th>

@@ -16,25 +16,24 @@
 <div class="container-fluid">
 	<h1 class="text-primary text-center display-4"> Zealous Placement Buddy </h1>
 	<h5 class="text-danger">${requestScope.info}</h5>
-	<div class="card shadow-lg rounded-1 my-lg-6">
+	
 		<!-- <hr class="my-4"> -->
-		<div class="row justify-content-center">
-			<form class="form" action="authenticate" method="post">
-				<div class="form group">
+		<div class="row justify-content-center my-5">
+			<form class="form col-md-6 col-xm-12 p-3 shadow-lg rounded" action="authenticate" method="post">
+				<div class="form-group">
 					<label for="user">User Name</label>
 					<input type="text" name="user" placeholder="Enter the username" class="form-control">
 				</div>
-				<div class="form group">
+				<div class="form-group">
 					<label for="pass">Password</label>
 					<input type="password" name="pass" placeholder="Enter the password" class="form-control">
 				</div>
-				<div class="text-center mt-3">
+				<div class="my-4 row justify-content-around">
 					<input type="submit" value="Login" class="btn btn-outline-success ">
 					<input type="reset" value="Clear" class="btn btn-outline-secondary ">
 				</div>
 			</form>
 		</div>
-	</div>
 </div>
 </body>
 </html>
