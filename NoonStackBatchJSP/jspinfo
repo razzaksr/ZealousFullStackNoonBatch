@@ -1,0 +1,43 @@
+Java Web development:
+Client side: 
+html
+css
+bootstrap
+javascript
+
+
+Server side:
+Servlet
+Db connection
+Session handling
+
+JavaServerPage:
+implicit object:
+request		HttpServletRequest
+response	HttpServletResponse
+this		Page
+out		JspWriter>> ignore expression tag
+session		HttpSession
+application	ServletContext
+pageContext	PageContext:
+
+page scope
+request scope
+session scope
+application scope
+
+
+config		ServletConfig
+
+jsp action tags
+jstl
+custom tags
+
+
+XML:
+Creation
+Parsing>> JAXB
+
+JSON:
+Creation
+Parsing
