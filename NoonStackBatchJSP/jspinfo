@@ -12,11 +12,11 @@ Db connection
 Session handling
 
 JavaServerPage:
-implicit object:
+implicit object:<% %>
 request		HttpServletRequest
 response	HttpServletResponse
 this		Page
-out		JspWriter>> ignore expression tag
+out			JspWriter>> ignore expression tag
 session		HttpSession
 application	ServletContext
 pageContext	PageContext:
@@ -29,8 +29,41 @@ application scope
 
 config		ServletConfig
 
-jsp action tags
-jstl
+jsp action tags:
+<jsp:tagname></jsp:tagname>
+
+include
+param
+forward
+useBean
+setProperty
+getProperty
+
+
+jstl:
+Jsp Standard Tag Library
+core tags:
+out
+set
+remove
+if
+choose
+when
+otherwise
+catch
+import
+
+
+sql tags:
+setDataSource
+query
+
+
+function
+format
+xml
+
+
 custom tags
 
 
