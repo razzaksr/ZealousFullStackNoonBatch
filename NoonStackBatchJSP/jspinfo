@@ -42,6 +42,20 @@ getProperty
 
 jstl:
 Jsp Standard Tag Library
+
+Implementation:
+jars: standard,jstl
+tag library descriptor:
+<tablib>
+<jsp-verion/>
+<tlib-version/>
+<tag><tag-class/></tag>
+</taglib>
+
+page directive:
+<%@ taglib prefix="letter" uri="tld locations"%>
+
+types:
 core tags:
 out
 set
