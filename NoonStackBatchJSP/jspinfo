@@ -72,13 +72,20 @@ sql tags:
 setDataSource
 query
 
-
 function
 format
 xml
 
 
-custom tags
+custom tags:
+user defined tag in jsp with user defined logic
+
+tag
+tld
+TagSupport: <tag>.......</tag>
+	doStartTag
+	doAfterBody
+	doEndTag
 
 
 XML:

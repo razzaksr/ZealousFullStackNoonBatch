@@ -1,0 +1,32 @@
+<taglib>
+	<jsp-version>1.1</jsp-version>
+	<tlib-version>1.1</tlib-version>
+	
+	<tag>
+		<name>salem</name>
+		<tag-class>hai.SalemHandler</tag-class>
+		<tag-body>empty</tag-body>
+	</tag>
+	
+	<tag>
+		<name>offer</name>
+		<tag-class>hai.OfferHandler</tag-class>
+	</tag>
+	
+	<tag>
+		<name>generate</name>
+		<tag-class>hai.GenerateHandler</tag-class>
+		
+		<attribute>
+			<name>basic</name>
+			<required>true</required>
+		</attribute>
+		
+		<attribute>
+			<name>exp</name>
+			<required>true</required>
+		</attribute>
+		
+	</tag>
+	
+</taglib>
