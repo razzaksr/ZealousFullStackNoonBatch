@@ -23,10 +23,9 @@ class Maxim
 		{
 			public void traverse()
 			{
-				for(int nice:hai)
-				{
-					System.out.println(nice);
-				}
+				/*
+				 * for(int nice:hai) { System.out.println(nice); }
+				 */
 			}
 		}
 		Yet y=new Yet();y.traverse();

@@ -2,8 +2,13 @@ package fullstaack.java.noon.NoonStackBatchJava.oop;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import fullstaack.java.noon.NoonStackBatchJava.gui.View;
 
+@XmlRootElement
 public class Mobile implements Serializable, Comparable
 {
 	private String model,brand,features;
@@ -33,52 +38,59 @@ public class Mobile implements Serializable, Comparable
 	public String getModel() {
 		return model;
 	}
+	@XmlAttribute
 	public void setModel(String model) {
 		this.model = model;
 	}
 	public String getBrand() {
 		return brand;
 	}
+	@XmlElement
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
 	public String getFeatures() {
 		return features;
 	}
+	@XmlElement
 	public void setFeatures(String features) {
 		this.features = features;
 	}
 	public int getRam() {
 		return ram;
 	}
+	@XmlElement
 	public void setRam(int ram) {
 		this.ram = ram;
 	}
 	public int getInternal() {
 		return internal;
 	}
+	@XmlElement
 	public void setInternal(int internal) {
 		this.internal = internal;
 	}
 	public int getPrice() {
 		return price;
 	}
+	@XmlElement
 	public void setPrice(int price) {
 		this.price = price;
 	}
 	public float getSize() {
 		return size;
 	}
+	@XmlElement
 	public void setSize(float size) {
 		this.size = size;
 	}
 	public int getQty() {
 		return qty;
 	}
+	@XmlElement
 	public void setQty(int qty) {
 		this.qty = qty;
 	}
-	@Override
 	public int compareTo(Object o) 
 	{
 		/*String com=((Mobile)o).getBrand();
