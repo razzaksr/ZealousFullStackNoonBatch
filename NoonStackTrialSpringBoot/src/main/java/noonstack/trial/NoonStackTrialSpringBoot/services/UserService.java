@@ -1,5 +1,7 @@
 package noonstack.trial.NoonStackTrialSpringBoot.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +17,15 @@ public class UserService
 	public UserInfo newRow(UserInfo info)
 	{
 		return userrepo.save(info);
+	}
+	
+	public List<UserInfo> extractAll()
+	{
+		return (List<UserInfo>) userrepo.findAll();
+	}
+	
+	public UserInfo extractOne(Integer id)
+	{
+		return userrepo.findById(id).orElse(new UserInfo());
 	}
 }
