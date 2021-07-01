@@ -21,6 +21,8 @@
 				<p th:text="${single.BMI}" class="text-danger float-left"></p>
 				<p th:text="${single.contact}" class="text-warning text-center"></p>
 				<p th:text="${single.location}" class="text-success"></p>
+				<a th:href="@{'edit/'+${single.userNum}}" class="btn btn-outline-warning">Edit</a>
+				<a th:href="@{'erase/'+${single.userNum}}" class="btn btn-outline-danger">Delete</a>
 			</div>
 		</div>
 	</div>

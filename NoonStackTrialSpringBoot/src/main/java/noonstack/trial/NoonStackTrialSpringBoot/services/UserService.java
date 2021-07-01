@@ -28,4 +28,22 @@ public class UserService
 	{
 		return userrepo.findById(id).orElse(new UserInfo());
 	}
+	
+	public String removeViaId(Integer id)
+	{
+		String user=extractOne(id).getName();
+		
+		userrepo.deleteById(id);
+		
+		return user+" has deleted from Record";
+	}
+	
+	public String removeViaObject(UserInfo object)
+	{
+		String user=object.getName();
+		
+		userrepo.delete(object);
+		
+		return user+" has deleted from Record";
+	}
 }

@@ -31,10 +31,12 @@ public class UserWebController
 	public String adding(Model model,UserInfo obj)
 	{
 		serv.newRow(obj);
+		
 		model.addAttribute("msg", obj.getName()+" has added");
 		return "enroll";
+		
 	}
-	
+
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String fetch(Model model)
 	{
@@ -48,5 +50,29 @@ public class UserWebController
 	{
 		model.addAttribute("single", serv.extractOne(id));
 		return "showcase";
+	}
+	
+	@RequestMapping(value="/edit/{id}",method=RequestMethod.GET)
+	public String letEdit(Model model, @PathVariable("id") Integer id)
+	{
+		model.addAttribute("obj", serv.extractOne(id));
+		return "edit";
+	}
+
+	@RequestMapping(value="/update",method=RequestMethod.POST)
+	public String editing(Model model,UserInfo obj)
+	{
+		serv.newRow(obj);
+		
+		model.addAttribute("msg", obj.getName()+" has updated");
+		return fetch(model);
+	}
+	
+	@RequestMapping(value="/erase/{id}",method=RequestMethod.GET)
+	public String deleting(Model model,@PathVariable("id") Integer id)
+	{
+		String msg=serv.removeViaId(id);
+		model.addAttribute("msg", msg);
+		return fetch(model);
 	}
 }
