@@ -1,4 +1,4 @@
-package zealous.erp.ZBuddy.controllers;
+package z.institute.buddy.ZealBuddy.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,16 +6,24 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import zealous.erp.ZBuddy.entity.Student;
-import zealous.erp.ZBuddy.services.StudentsService;
+import z.institute.buddy.ZealBuddy.model.Student;
+import z.institute.buddy.ZealBuddy.services.StudentsService;
 
 @Controller
-public class WebController 
+public class StudentsWebController 
 {
 	@Autowired
 	StudentsService service;
 	
 	@RequestMapping("/")
+	public String hai(Model model)
+	{
+		Student student=new Student();
+		model.addAttribute("object", student);
+		return "new";
+	}
+	
+	@RequestMapping("/ad")
 	public String ins(Model model)
 	{
 		Student student=new Student();

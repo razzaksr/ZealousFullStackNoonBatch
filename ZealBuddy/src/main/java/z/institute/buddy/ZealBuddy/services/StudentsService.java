@@ -1,10 +1,10 @@
-package zealous.erp.ZBuddy.services;
+package z.institute.buddy.ZealBuddy.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import zealous.erp.ZBuddy.entity.Student;
-import zealous.erp.ZBuddy.repository.StudentsRepository;
+import z.institute.buddy.ZealBuddy.model.Student;
+import z.institute.buddy.ZealBuddy.repository.StudentsRepository;
 
 @Service
 public class StudentsService 

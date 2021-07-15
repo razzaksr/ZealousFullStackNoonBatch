@@ -1,4 +1,4 @@
-package zealous.erp.ZBuddy.entity;
+package z.institute.buddy.ZealBuddy.model;
 
 import java.sql.Date;
 
@@ -152,3 +152,4 @@ public class Student
 		this.dues = dues;
 	}
 }
+
