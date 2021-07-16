@@ -12,9 +12,9 @@ public class StudentsService
 	@Autowired
 	StudentsRepository repo;
 	
-	public String insertion(Student object)
+	public Student insertion(Student object)
 	{
-		return repo.save(object).getName()+" has Updated";
+		return repo.save(object);
 	}
 	
 }

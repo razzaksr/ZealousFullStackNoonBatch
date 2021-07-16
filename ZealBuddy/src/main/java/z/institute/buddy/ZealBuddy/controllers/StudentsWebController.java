@@ -17,10 +17,8 @@ public class StudentsWebController
 	
 	@RequestMapping("/")
 	public String hai(Model model)
-	{
-		Student student=new Student();
-		model.addAttribute("object", student);
-		return "new";
+	{		
+		return "";
 	}
 	
 	@RequestMapping("/ad")
@@ -34,7 +32,7 @@ public class StudentsWebController
 	@RequestMapping(value="/adding",method=RequestMethod.POST)
 	public String insertings(Model model,Student object)
 	{
-		String out=service.insertion(object);
+		String out=service.insertion(object).getName()+" has Updated";
 		model.addAttribute("msg", out);
 		return "new";
 	}
