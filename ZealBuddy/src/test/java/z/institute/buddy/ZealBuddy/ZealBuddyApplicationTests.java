@@ -11,6 +11,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 import java.sql.Date;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -59,4 +61,15 @@ class ZealBuddyApplicationTests {
 		assertFalse(service.insertion(student1).getDues());
 	}
 
+	@Test
+	public void testList()
+	{
+		when(repository.findAll()).thenReturn(Stream.of(
+				new Student(12,"Razak Mohamed S","Salem","Muthayammal",9876545678L,"razzaksr@gmail.com","java full stack",25000,10000,new Date(2021,01,20),new Date(2021,01,20),new Date(2021,01,25),null,true,false),
+				new Student(45,"Sabarinathan S","Ponnammapet, Salem","Excel",8765678987678L,"sabariragu@gmail.com","java full stack",25000,10000,new Date(2021,01,20),new Date(2021,01,20),new Date(2021,01,25),null,true,false),
+				new Student(11,"Meharaj S","Ponnammapet, Salem","Excel",8765678987678L,"meharaj@gmail.com","python",8000,1000,new Date(2021,01,20),new Date(2021,01,20),new Date(2021,01,25),null,true,false)).collect(Collectors.toList()));
+		
+		assertTrue(service.viewAll().size()>5);
+		assertSame("Ponnammapet, Salem", service.viewAll().get(2).getAddress());
+	}
 }

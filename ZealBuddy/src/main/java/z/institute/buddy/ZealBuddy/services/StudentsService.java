@@ -1,5 +1,7 @@
 package z.institute.buddy.ZealBuddy.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,11 @@ public class StudentsService
 	public Student insertion(Student object)
 	{
 		return repo.save(object);
+	}
+	
+	public List<Student> viewAll()
+	{
+		return repo.findAll();
 	}
 	
 }

@@ -1,5 +1,7 @@
 package z.institute.buddy.ZealBuddy.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,5 +37,19 @@ public class StudentsWebController
 		String out=service.insertion(object).getName()+" has Updated";
 		model.addAttribute("msg", out);
 		return "new";
+	}
+	
+	@RequestMapping("/home")
+	public String home(Model model)
+	{
+		return "home";
+	}
+	
+	@RequestMapping("/list")
+	public String list(Model model)
+	{
+		List<Student> hai=service.viewAll();
+		model.addAttribute("all", hai);
+		return "list";
 	}
 }

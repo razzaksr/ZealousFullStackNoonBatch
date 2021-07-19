@@ -1,0 +1,9 @@
+@charset "ISO-8859-1";
+
+#menu-gab
+{
+	margin-left: 5px;
+	margin-right: 5px;
+	color:blue;
+	background-color: red;
+}
