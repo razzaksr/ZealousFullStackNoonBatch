@@ -24,4 +24,19 @@ public class StudentsService
 		return repo.findAll();
 	}
 	
+	public List<Student> viewAllViaCertificate(Boolean certificate)
+	{
+		return repo.findAllByCertificate(certificate);
+	}
+	
+	public List<Student> viewAllViaName(String name)
+	{
+		return repo.findAllByName(name);
+	}
+	
+	public List<Student> viewAllViaCourse(String course)
+	{
+		return repo.findAllByCourse(course);
+	}
+	
 }

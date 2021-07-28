@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import z.institute.buddy.ZealBuddy.model.Student;
 import z.institute.buddy.ZealBuddy.services.StudentsService;
@@ -50,6 +51,37 @@ public class StudentsWebController
 	{
 		List<Student> hai=service.viewAll();
 		model.addAttribute("all", hai);
+		return "list";
+	}
+	
+	@RequestMapping("/find")
+	public String find(Model model)
+	{
+		return "find";
+	}
+	
+	@RequestMapping(value = "/finding",method=RequestMethod.POST)
+	public String finding(Model model,@RequestParam(required = false,value="certificate") Boolean certificate,@RequestParam(required = false,value="name") String name,@RequestParam(required = false,value="course") String course)
+	{
+		System.out.println(certificate+" "+name+" "+course);
+		List<Student> object=null;
+		if(certificate!=null&&name.equals("")&&course.equals("Select Any Course"))
+		{
+			System.out.println("Certificated based filter "+certificate);
+			object=service.viewAllViaCertificate(certificate);
+		}
+		else if(certificate==null&&!name.equals("")&&course.equals("Select Any Course"))
+		{
+			System.out.println("Based on "+name);
+			object=service.viewAllViaName(name);
+		}
+		else if(certificate==null&&name.equals("")&&!course.equals("Select Any Course"))
+		{
+			course=course.toLowerCase();
+			System.out.println("Based on "+course);
+			service.viewAllViaCourse(course);
+		}
+		model.addAttribute("all", object);
 		return "list";
 	}
 }

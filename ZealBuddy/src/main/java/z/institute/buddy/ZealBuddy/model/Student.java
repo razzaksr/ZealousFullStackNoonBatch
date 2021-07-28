@@ -24,12 +24,12 @@ public class Student
 	private Date joined;
 	private Date paid;
 	private Date payable;
-	@Column(columnDefinition = "date default '1999-09-09'")
-	private Date completed;
-	@Column(columnDefinition = "boolean default false")
-	private Boolean certificate;
-	@Column(columnDefinition = "boolean default true")
-	private Boolean dues;
+	@Column(columnDefinition = "Date default '1999-09-09'")
+	private Date completed=new Date(1999, 9, 9);
+	@Column(columnDefinition = "Boolean default false")
+	private Boolean certificate=false;
+	@Column(columnDefinition = "Boolean default true")
+	private Boolean dues=true;
 	@Override
 	public String toString() {
 		return "Students [number=" + number + ", name=" + name + ", address=" + address + ", org=" + org + ", mobile="
