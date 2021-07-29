@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>editing an candidate</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="images/extra.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+		<div class="container-fluid">
+			<a href="#" class="navbar-brand"><img style="height:80px;width:150px" src="images/logo.png" alt="logo"></a>
+			<button class="navbar-toggler" data-toggle="collapse" data-target="#place">
+			<span class="navbar-toggler-icon"></span></button>
+			<div class="collapse navbar-collapse" id="place">
+				<ul class="navbar-nav ml-auto">
+					<li class="navbar-item active" id="menu-gap">
+						<a href="#" th:href="@{'/home'}" class="navbar-link btn btn-light badge-pill">Home</a>
+					</li>
+					<li class="navbar-item" id="menu-gap">
+						<a href="#" th:href="@{'/ad'}" class="navbar-link btn btn-light badge-pill">Enroll Candidate</a>
+					</li>
+					<li class="navbar-item" id="menu-gap">
+						<a href="#" th:href="@{'/find'}" class="navbar-link btn btn-light badge-pill">Find Candidate</a>
+					</li>
+					<li class="navbar-item" id="menu-gap">
+						<a href="#" th:href="@{'/list'}" class="navbar-link btn btn-light badge-pill">List Candidates</a>
+					</li>
+					<li class="navbar-item" id="menu-gap">
+						<a href="#" class="navbar-link btn btn-light badge-pill">Logout</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+		<h2 th:text="${msg}" class="text-danger"></h2>
+		<h1 class="display-4 text-center text-primary">Edit Student</h1>
+		<div class="row justify-content-center">
+			<form action="#" method="post" th:action="@{'/adding'}" th:object="${object}" class="shadow rounded border col-md-8 col-lg-6 col-sm-12 p-5">
+				<div class="form-group">
+					<label for="number">Number of the candidate</label>
+					<input type="text" class="form-control" th:field="*{number}" placeholder="Number" readonly="readonly">
+				</div>
+				<div class="form-group">
+					<label for="name">Name of the candidate</label>
+					<input type="text" class="form-control" th:field="*{name}" placeholder="Name please">
+				</div>
+				<div class="form-group">
+					<label for="address">Communication address of the candidate</label>
+					<textarea class="form-control" th:field="*{address}" placeholder="address please"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="org">Organization of the candidate</label>
+					<input type="text" class="form-control" th:field="*{org}" placeholder="Organization please">
+				</div>
+				<div class="form-group">
+					<label for="mobile">Mobile contact of the candidate</label>
+					<input type="number" class="form-control" th:field="*{mobile}" placeholder="Contact number please">
+				</div>
+				<div class="form-group">
+					<label for="email">Email of the candidate</label>
+					<input type="text" class="form-control" th:field="*{email}" placeholder="Email please">
+				</div>
+				<div class="form-group">
+					<label for="course">Course the candidate took</label>
+					<input type="text" class="form-control" th:field="*{course}" placeholder="Skillset please">
+				</div>
+				<div class="form-group">
+					<label for="fee">Course fee of the candidate has choose</label>
+					<input type="number" class="form-control" th:field="*{fee}" placeholder="Fees please">
+				</div>
+				<div class="form-group">
+					<label for="first">Paid amount of the candidate First</label>
+					<input type="number" class="form-control" th:field="*{first}" placeholder="First paid">
+				</div>
+				<div class="form-group">
+					<label for="joined">Date of the candidate joined</label>
+					<input type="text" class="form-control" th:field="*{joined}" placeholder="Date of joined yyy-mm-dd">
+				</div>
+				<div class="form-group">
+					<label for="paid">Date of the candidate paid first amount</label>
+					<input type="text" class="form-control" th:field="*{paid}" placeholder="First paid date yyyy-mm-dd">
+				</div>
+				<div class="form-group">
+					<label for="payable">Date of the candidate has to pay</label>
+					<input type="text" class="form-control" th:field="*{payable}" placeholder="Payable date yyyy-mm-dd">
+				</div>
+				<div class="form-group">
+					<label for="dues">Due of the candidate has to pay</label>
+					<input type="text" class="form-control" th:field="*{dues}" placeholder="true/false">
+				</div>
+				<div class="form-group">
+					<label for="completed">Date of completion</label>
+					<input type="text" class="form-control" th:field="*{completed}" placeholder="yyyy-mm-dd">
+				</div>
+				<div class="form-group">
+					<label for="certificate">Certificate status</label>
+					<input type="text" class="form-control" th:field="*{certificate}" placeholder="true/false">
+				</div>
+				<div class="row justify-content-around">
+					<button class="btn btn-outline-primary">Update</button>
+					<button class="btn btn-outline-danger">Cancel</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

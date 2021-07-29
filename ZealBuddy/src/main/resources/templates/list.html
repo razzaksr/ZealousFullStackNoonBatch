@@ -63,7 +63,11 @@
 					<td th:text="${one.joined}"></td><td th:text="${one.first}"></td>
 					<td th:text="${one.paid}"></td><td th:text="${one.payable}"></td>
 					<td th:text="${one.dues}"></td><td th:text="${one.completed}"></td>
-					<td th:text="${one.certificate}"></td>
+					<td>
+						<a href="#" th:href="@{'/edit/'+${one.number}}">
+							<p th:text="${one.certificate}"></p>
+						</a>
+					</td>
 				</tr>
 			</tbody>
 		</table>

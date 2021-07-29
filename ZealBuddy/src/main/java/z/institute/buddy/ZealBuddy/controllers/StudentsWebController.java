@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -79,9 +80,17 @@ public class StudentsWebController
 		{
 			course=course.toLowerCase();
 			System.out.println("Based on "+course);
-			service.viewAllViaCourse(course);
+			object=service.viewAllViaCourse(course);
 		}
 		model.addAttribute("all", object);
 		return "list";
+	}
+	
+	@RequestMapping("/edit/{obj}")
+	public String enableEdit(Model model,@PathVariable("obj") Integer obj)
+	{
+		Student object=service.viewById(obj);
+		model.addAttribute("object", object);
+		return "edit";
 	}
 }

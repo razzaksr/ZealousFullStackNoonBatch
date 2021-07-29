@@ -72,4 +72,24 @@ class ZealBuddyApplicationTests {
 		assertTrue(service.viewAll().size()>5);
 		assertSame("Ponnammapet, Salem", service.viewAll().get(2).getAddress());
 	}
+	
+	@Test
+	public void testFind()
+	{
+		when(repository.findAllByName("Razak")).thenReturn(Stream.of(
+				new Student(12,"Razak Mohamed S","Salem","Muthayammal",9876545678L,"razzaksr@gmail.com","java full stack",25000,10000,new Date(2021,01,20),new Date(2021,01,20),new Date(2021,01,25),null,true,false),
+				new Student(45,"Shahul Razak","Chennai","SRM",9876545678L,"razzaksr@gmail.com","python",25000,10000,new Date(2021,01,20),new Date(2021,01,20),new Date(2021,01,25),null,true,false)).collect(Collectors.toList()));
+		assertEquals(12,service.viewAllViaName("Razak").get(1).getNumber());
+		
+		when(repository.findAllByCourse("java")).thenReturn(Stream.of(
+				new Student(12,"Razak Mohamed S","Salem","Muthayammal",9876545678L,"razzaksr@gmail.com","java full stack",25000,10000,new Date(2021,01,20),new Date(2021,01,20),new Date(2021,01,25),null,true,false),
+				new Student(45,"Sabarinathan S","Ponnammapet, Salem","Excel",8765678987678L,"sabariragu@gmail.com","java full stack",25000,10000,new Date(2021,01,20),new Date(2021,01,20),new Date(2021,01,25),null,true,false)).collect(Collectors.toList()));
+		assertTrue(service.viewAllViaCourse("java").get(1).getDues()==false);
+		
+		when(repository.findAllByCertificate(true)).thenReturn(Stream.of(
+				new Student(12,"Razak Mohamed S","Salem","Muthayammal",9876545678L,"razzaksr@gmail.com","java full stack",25000,10000,new Date(2021,01,20),new Date(2021,01,20),new Date(2021,01,25),null,true,false),
+				new Student(45,"Sabarinathan S","Ponnammapet, Salem","Excel",8765678987678L,"sabariragu@gmail.com","java full stack",25000,10000,new Date(2021,01,20),new Date(2021,01,20),new Date(2021,01,25),null,true,false),
+				new Student(11,"Meharaj S","Ponnammapet, Salem","Excel",8765678987678L,"meharaj@gmail.com","python",8000,1000,new Date(2021,01,20),new Date(2021,01,20),new Date(2021,01,25),null,true,false)).collect(Collectors.toList()));
+		assertNotNull(service.viewAllViaCertificate(true));
+	}
 }

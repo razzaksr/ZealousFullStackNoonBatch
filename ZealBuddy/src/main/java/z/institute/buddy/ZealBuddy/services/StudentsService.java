@@ -39,4 +39,9 @@ public class StudentsService
 		return repo.findAllByCourse(course);
 	}
 	
+	public Student viewById(Integer id)
+	{
+		return repo.findById(id).orElse(new Student());
+	}
+	
 }
