@@ -41,7 +41,21 @@ public class StudentsService
 	
 	public Student viewById(Integer id)
 	{
-		return repo.findById(id).orElse(new Student());
+		return repo.getById(id);
+	}
+	
+	public String eraseByObject(Student student)
+	{
+		String stuName=student.getName();
+		repo.delete(student);
+		return stuName+" has deleted";
+	}
+	
+	public String eraseByKey(Integer key)
+	{
+		String stuName=viewById(key).getName();
+		repo.deleteById(key);
+		return stuName+" has deleted";
 	}
 	
 }

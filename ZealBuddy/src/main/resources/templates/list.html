@@ -56,7 +56,12 @@
 			</thead>
 			<tbody>
 				<tr th:each="one:${all}">
-					<td th:text="${one.number}"></td><td th:text="${one.name}"></td>
+					<td>
+						<a href="#" th:href="@{'/delete/'+${one.number}}">
+							<p th:text="${one.number}"></p>
+						</a>
+					</td>
+					<td th:text="${one.name}"></td>
 					<td th:text="${one.mobile}"></td><td th:text="${one.address}"></td>
 					<td th:text="${one.email}"></td><td th:text="${one.org}"></td>
 					<td th:text="${one.course}"></td><td th:text="${one.fee}"></td>

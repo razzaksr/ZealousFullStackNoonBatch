@@ -38,7 +38,7 @@ public class StudentsWebController
 	{
 		String out=service.insertion(object).getName()+" has Updated";
 		model.addAttribute("msg", out);
-		return "new";
+		return "home";
 	}
 	
 	@RequestMapping("/home")
@@ -92,5 +92,12 @@ public class StudentsWebController
 		Student object=service.viewById(obj);
 		model.addAttribute("object", object);
 		return "edit";
+	}
+	
+	@RequestMapping("/delete/{no}")
+	public String enableDelete(Model model, @PathVariable("no") Integer no)
+	{
+		model.addAttribute("msg",service.eraseByKey(no));
+		return "home";
 	}
 }
