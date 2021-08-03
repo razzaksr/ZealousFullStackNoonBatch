@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import z.institute.buddy.ZealBuddy.model.Student;
 import z.institute.buddy.ZealBuddy.services.StudentsService;
 
+
+// webpages
 @Controller
 public class StudentsWebController 
 {
@@ -98,6 +100,17 @@ public class StudentsWebController
 	public String enableDelete(Model model, @PathVariable("no") Integer no)
 	{
 		model.addAttribute("msg",service.eraseByKey(no));
+		return "home";
+	}
+	
+	@RequestMapping("/generate/{num}")
+	public String gen(Model model,@PathVariable("num") Integer num )
+	{
+		Student object=service.viewById(num);
+		String h = service.certify(object);
+		object.setCertificate(true);
+		service.insertion(object);
+		model.addAttribute("msg", h);
 		return "home";
 	}
 }

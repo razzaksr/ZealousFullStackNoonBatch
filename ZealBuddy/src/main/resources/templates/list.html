@@ -67,7 +67,12 @@
 					<td th:text="${one.course}"></td><td th:text="${one.fee}"></td>
 					<td th:text="${one.joined}"></td><td th:text="${one.first}"></td>
 					<td th:text="${one.paid}"></td><td th:text="${one.payable}"></td>
-					<td th:text="${one.dues}"></td><td th:text="${one.completed}"></td>
+					<td th:text="${one.dues}"></td>
+					<td> 
+						<a href="#" th:href="@{'/generate/'+${one.number}}">
+							<p th:text="${one.completed}"></p>
+						</a>
+					</td>
 					<td>
 						<a href="#" th:href="@{'/edit/'+${one.number}}">
 							<p th:text="${one.certificate}"></p>
