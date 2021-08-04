@@ -3,6 +3,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Searching Candidates</title>
+<link rel = "icon" href ="images/zealous.png" type = "image/png">
 <!-- CSS only -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <!-- JS, Popper.js, and jQuery -->
@@ -32,12 +33,13 @@
 						<a href="#" th:href="@{'/list'}" class="navbar-link btn btn-light badge-pill">List Candidates</a>
 					</li>
 					<li class="navbar-item" id="menu-gap">
-						<a href="#" class="navbar-link btn btn-light badge-pill">Logout</a>
+						<a href="#" th:href="@{'/logout'}" class="navbar-link btn btn-light badge-pill">Logout</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
+	<h1 class="text-primary display-4">Welcome User... [[${#httpServletRequest.remoteUser}]]</h1>
 	<div class="row justify-content-center">
 		<div class="col-6">
 			<h1 class="text-primary text-center mt-5">Finding candidate</h1>

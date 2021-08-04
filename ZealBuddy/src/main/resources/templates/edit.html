@@ -4,6 +4,7 @@
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>editing an candidate</title>
+<link rel = "icon" href ="images/zealous.png" type = "image/png">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <!-- JS, Popper.js, and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -33,12 +34,13 @@
 						<a href="#" th:href="@{'/list'}" class="navbar-link btn btn-light badge-pill">List Candidates</a>
 					</li>
 					<li class="navbar-item" id="menu-gap">
-						<a href="#" class="navbar-link btn btn-light badge-pill">Logout</a>
+						<a href="#" th:href="@{'/logout'}" class="navbar-link btn btn-light badge-pill">Logout</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
+	<h1 class="text-primary display-4">Welcome User... [[${#httpServletRequest.remoteUser}]]</h1>
 		<h2 th:text="${msg}" class="text-danger"></h2>
 		<h1 class="display-4 text-center text-primary">Edit Student</h1>
 		<div class="row justify-content-center">

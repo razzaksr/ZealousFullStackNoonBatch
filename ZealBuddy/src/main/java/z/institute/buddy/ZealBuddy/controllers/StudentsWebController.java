@@ -24,7 +24,7 @@ public class StudentsWebController
 	@RequestMapping("/")
 	public String hai(Model model)
 	{		
-		return "";
+		return "index";
 	}
 	
 	@RequestMapping("/ad")
